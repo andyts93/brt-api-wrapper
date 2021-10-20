@@ -1,0 +1,19 @@
+{
+    "name": "andyts93/brt-api-wrapper",
+    "description": "PHP wrapper for BRT Rest API service",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Andyts93\\BrtApiWrapper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Andrea Castellini",
+            "email": "and1@live.it"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
