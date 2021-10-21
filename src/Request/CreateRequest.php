@@ -2,9 +2,12 @@
 
 namespace Andyts93\BrtApiWrapper\Request;
 
+use Andyts93\BrtApiWrapper\Response\CreateResponse;
+
 class CreateRequest extends BaseRequest
 {
     protected $endpoint = 'shipments/shipment';
+    protected $method = 'POST';
     protected $dataWrapper = 'createData';
     protected $mandatoryFields = [
         'departureDepot',
@@ -333,10 +336,9 @@ class CreateRequest extends BaseRequest
      */
     private $pudoId;
 
-    public function __construct($userId, $password)
+    public function call()
     {
-        parent::__construct($userId, $password);
-        $this->labelParameters = new LabelParameter();
+        return new CreateResponse(parent::call());
     }
 
     /**

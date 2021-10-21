@@ -13,6 +13,7 @@ class BaseRequest
 {
     protected $account;
     protected $endpoint;
+    protected $method = 'POST';
     protected $apiProperties = [];
     protected $dataWrapper = 'data';
     protected $mandatoryFields = [];
@@ -21,7 +22,7 @@ class BaseRequest
     /**
      * @var LabelParameter
      */
-    public $labelParameters;
+    protected $labelParameters;
 
     public function __construct($userId, $password)
     {
@@ -44,7 +45,7 @@ class BaseRequest
             'timeout' => 2.0
         ]);
 
-        $response = $client->post($this->endpoint, [
+        $response = $client->request($this->method, $this->endpoint, [
             'json' => $this->createRequestBody()
         ]);
 
@@ -54,7 +55,7 @@ class BaseRequest
             throw new InvalidJsonException(json_last_error_msg(), json_last_error());
         }
 
-        return new CreateResponse($response);
+        return $response;
     }
 
     public function toArray()
@@ -81,4 +82,26 @@ class BaseRequest
         }
         return array_merge(['account' => $this->account], [$this->dataWrapper => $this->toArray()]);
     }
+
+    /**
+     * @param mixed $isLabelRequired
+     * @return BaseRequest
+     */
+    public function setIsLabelRequired($isLabelRequired)
+    {
+        $this->isLabelRequired = $isLabelRequired;
+        return $this;
+    }
+
+    /**
+     * @param LabelParameter $labelParameters
+     * @return BaseRequest
+     */
+    public function setLabelParameters($labelParameters)
+    {
+        $this->labelParameters = $labelParameters;
+        return $this;
+    }
+
+
 }

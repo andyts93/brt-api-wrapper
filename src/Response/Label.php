@@ -24,7 +24,7 @@ class Label
 
         $this->dataLength = $dataLength;
         $this->parcelID = $parcelID;
-        $this->stream = $stream;
+        $this->stream = base64_decode($stream);
     }
 
     /**
