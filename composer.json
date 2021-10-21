@@ -4,6 +4,9 @@
     "type": "library",
     "license": "MIT",
     "autoload": {
+        "files": [
+            "helpers.php"
+        ],
         "psr-4": {
             "Andyts93\\BrtApiWrapper\\": "src/"
         }
@@ -14,6 +17,13 @@
             "email": "and1@live.it"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "php": ">=5.4.45",
+        "guzzlehttp/guzzle": "^7.4",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "fzaninotto/faker": "^1.9"
+    }
 }
