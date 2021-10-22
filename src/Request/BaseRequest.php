@@ -78,7 +78,7 @@ class BaseRequest
     {
         $emptyMandatory = array_filter($this->toArray(), function ($v, $k) {
             return in_array($k, $this->mandatoryFields) && (is_null($v) || $v === "");
-        }, ARRAY_FILTER_USE_BOTH);
+        }, 1);
         if (count($emptyMandatory) > 0) {
             throw new RequestException(sprintf('Fields %s are mandatory', implode(', ', array_keys($emptyMandatory))));
         }
