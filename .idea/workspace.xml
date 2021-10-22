@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca076eab-42b3-492f-a680-f50cf6afe7ef" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/php.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/php.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Request/BaseRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Request/BaseRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CreateRequestTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CreateRequestTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +99,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634734142946</updated>
-      <workItem from="1634734144424" duration="29581000" />
+      <workItem from="1634734144424" duration="30229000" />
     </task>
     <servers />
   </component>
