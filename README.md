@@ -12,9 +12,9 @@ composer require andyts93/brt-api-wrapper
 ```
 
 ## Features
-* Create shippings
-* Confirm shippings
-* Delete shippings
+*   Create shippings
+*   Confirm shippings
+*   Delete shippings
 
 ## Usage
 ### Create shipping
