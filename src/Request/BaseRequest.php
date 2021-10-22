@@ -76,9 +76,16 @@ class BaseRequest
 
     public function createRequestBody()
     {
-        $emptyMandatory = array_filter($this->toArray(), function ($v, $k) {
-            return in_array($k, $this->mandatoryFields) && (is_null($v) || $v === "");
-        }, 1);
+//        PHP 5.6+ only
+//        $emptyMandatory = array_filter($this->toArray(), function ($v, $k) {
+//            return in_array($k, $this->mandatoryFields) && (is_null($v) || $v === "");
+//        }, 1);
+        $emptyMandatory = [];
+        foreach ($this->toArray() as $k => $v) {
+            if (in_array($k, $this->mandatoryFields) && (is_null($v) || $v === "")) {
+                $emptyMandatory[$k] = $v;
+            }
+        }
         if (count($emptyMandatory) > 0) {
             throw new RequestException(sprintf('Fields %s are mandatory', implode(', ', array_keys($emptyMandatory))));
         }
