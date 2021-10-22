@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class CreateRequestTest extends TestCase
 {
-    public function testCreateResponseSuccessful()
+    private function buildRequest()
     {
         $faker = Factory::create('it_IT');
 
@@ -27,6 +27,22 @@ class CreateRequestTest extends TestCase
             ->setIsCODMandatory(0)
             ->setIsLabelRequired(1)
             ->setLabelParameters(new LabelParameter());
+        return $request;
+    }
+
+    public function testHasCorrectStructure()
+    {
+        $request = $this->buildRequest();
+
+        $body = $request->createRequestBody();
+
+        $this->assertArrayHasKey('createData', $body);
+        $this->assertArrayHasKey('createData', $body);
+    }
+
+    public function testCreateResponseSuccessful()
+    {
+        $request = $this->buildRequest();
 
         $response = $request->call();
 

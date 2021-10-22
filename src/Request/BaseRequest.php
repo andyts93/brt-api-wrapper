@@ -72,7 +72,7 @@ class BaseRequest
         return $properties;
     }
 
-    private function createRequestBody()
+    public function createRequestBody()
     {
         $emptyMandatory = array_filter($this->toArray(), function ($v, $k) {
             return in_array($k, $this->mandatoryFields) && (is_null($v) || $v === "");

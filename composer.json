@@ -17,6 +17,9 @@
             "email": "and1@live.it"
         }
     ],
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
     "require": {
         "php": ">=5.4.45",
         "guzzlehttp/guzzle": "^7.4",
