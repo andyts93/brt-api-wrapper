@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ruleset>
+    <arg name="encoding" value="UTF-8"/>
+
+    <rule ref="PSR2"/>
+
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+    <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+</ruleset>

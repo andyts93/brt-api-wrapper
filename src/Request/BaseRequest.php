@@ -111,6 +111,4 @@ class BaseRequest
         $this->labelParameters = $labelParameters;
         return $this;
     }
-
-
 }

@@ -1,1 +1,1 @@
-[![PHP Composer](https://github.com/andyts93/brt-api-wrapper/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/andyts93/brt-api-wrapper/actions/workflows/php.yml)
+[![PHP Composer](https://github.com/andyts93/brt-api-wrapper/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/andyts93/brt-api-wrapper/actions/workflows/php.yml) [![codecov](https://codecov.io/gh/andyts93/brt-api-wrapper/branch/main/graph/badge.svg?token=46SX6EHSV4)](https://codecov.io/gh/andyts93/brt-api-wrapper)

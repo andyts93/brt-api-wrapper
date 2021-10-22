@@ -34,8 +34,14 @@ class LabelParameter
      */
     private $isBarcodeControlRowRequired;
 
-    public function __construct($outputType = 'ZPL', $offsetX = 0, $offsetY = 0, $isBorderRequired = 0, $isLogoRequired = 0, $isBarcodeControlRowRequired = 0)
-    {
+    public function __construct(
+        $outputType = 'ZPL',
+        $offsetX = 0,
+        $offsetY = 0,
+        $isBorderRequired = 0,
+        $isLogoRequired = 0,
+        $isBarcodeControlRowRequired = 0
+    ) {
 
         $this->outputType = $outputType;
         $this->offsetX = $offsetX;
@@ -104,6 +110,4 @@ class LabelParameter
         $this->isBarcodeControlRowRequired = $isBarcodeControlRowRequired;
         return $this;
     }
-
-
 }

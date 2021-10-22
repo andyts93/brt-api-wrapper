@@ -1,12 +1,14 @@
 <?php
 
+namespace Tests;
+
 use Andyts93\BrtApiWrapper\Request\ConfirmRequest;
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
 
 class ConfirmRequestTest extends TestCase
 {
-    public function testConfirmResponseSuccessful()
+    private function buildRequest()
     {
         $faker = Factory::create('it_IT');
 
@@ -14,6 +16,33 @@ class ConfirmRequestTest extends TestCase
 
         $request->setSenderCustomerCode(1)
             ->setNumericSenderReference($faker->numberBetween(1, 10000));
+
+        return $request;
+    }
+
+    public function testHasCorrectStructure()
+    {
+        $request = $this->buildRequest();
+
+        $body = $request->createRequestBody();
+
+        $this->assertArrayHasKey('confirmData', $body);
+        $this->assertArrayHasKey('confirmData', $body);
+    }
+
+    public function testHasNotMandatoryFields()
+    {
+        $request = $this->buildRequest();
+
+        $request->setSenderCustomerCode(null);
+
+        $this->setExpectedException('Andyts93\BrtApiWrapper\Exception\RequestException');
+        $request->call();
+    }
+
+    public function testConfirmResponseSuccessful()
+    {
+        $request = $this->buildRequest();
 
         $response = $request->call();
 

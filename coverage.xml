@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1634908853">
+  <project timestamp="1634908853">
+    <package name="Andyts93\BrtApiWrapper">
+      <file name="/Users/andrea/Documents/Projects/Personali/brt-api-wrapper/src/BrtApi.php">
+        <class name="BrtApi" namespace="Andyts93\BrtApiWrapper">
+          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="12" coveredelements="0"/>
+        </class>
+        <line num="13" type="method" name="__construct" crap="2" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="24" type="method" name="create" crap="2" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="32" type="stmt" count="0"/>
+        <metrics loc="33" ncloc="28" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="12" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="Andyts93\BrtApiWrapper\Exception">
+      <file name="/Users/andrea/Documents/Projects/Personali/brt-api-wrapper/src/Exception/InvalidJsonException.php">
+        <class name="InvalidJsonException" namespace="Andyts93\BrtApiWrapper\Exception">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="8" ncloc="8" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+      <file name="/Users/andrea/Documents/Projects/Personali/brt-api-wrapper/src/Exception/RequestException.php">
+        <class name="RequestException" namespace="Andyts93\BrtApiWrapper\Exception">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="8" ncloc="8" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="Andyts93\BrtApiWrapper\Request">
+      <file name="/Users/andrea/Documents/Projects/Personali/brt-api-wrapper/src/Request/BaseRequest.php">
+        <class name="BaseRequest" namespace="Andyts93\BrtApiWrapper\Request">
+          <metrics methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="30" elements="37" coveredelements="35"/>
+        </class>
+        <line num="27" type="method" name="__construct" crap="1" count="9"/>
+        <line num="29" type="stmt" count="9"/>
+        <line num="30" type="stmt" count="9"/>
+        <line num="31" type="stmt" count="9"/>
+        <line num="33" type="stmt" count="9"/>
+        <line num="41" type="method" name="call" crap="2.01" count="6"/>
+        <line num="43" type="stmt" count="6"/>
+        <line num="44" type="stmt" count="6"/>
+        <line num="48" type="stmt" count="6"/>
+        <line num="49" type="stmt" count="6"/>
+        <line num="52" type="stmt" count="3"/>
+        <line num="54" type="stmt" count="3"/>
+        <line num="56" type="stmt" count="3"/>
+        <line num="57" type="stmt" count="0"/>
+        <line num="60" type="stmt" count="3"/>
+        <line num="63" type="method" name="toArray" crap="3" count="9"/>
+        <line num="65" type="stmt" count="9"/>
+        <line num="66" type="stmt" count="9"/>
+        <line num="67" type="stmt" count="9"/>
+        <line num="69" type="stmt" count="9"/>
+        <line num="70" type="stmt" count="9"/>
+        <line num="71" type="stmt" count="9"/>
+        <line num="74" type="stmt" count="9"/>
+        <line num="77" type="method" name="createRequestBody" crap="6" count="9"/>
+        <line num="83" type="stmt" count="9"/>
+        <line num="84" type="stmt" count="9"/>
+        <line num="85" type="stmt" count="9"/>
+        <line num="86" type="stmt" count="3"/>
+        <line num="89" type="stmt" count="9"/>
+        <line num="90" type="stmt" count="3"/>
+        <line num="92" type="stmt" count="6"/>
+        <line num="99" type="method" name="setIsLabelRequired" crap="1" count="3"/>
+        <line num="101" type="stmt" count="3"/>
+        <line num="102" type="stmt" count="3"/>
+        <line num="109" type="method" name="setLabelParameters" crap="1" count="3"/>
+        <line num="111" type="stmt" count="3"/>
+        <line num="112" type="stmt" count="3"/>
+        <metrics loc="114" ncloc="87" classes="1" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="30" elements="37" coveredelements="35"/>
+      </file>
+      <file name="/Users/andrea/Documents/Projects/Personali/brt-api-wrapper/src/Request/ConfirmRequest.php">
+        <class name="ConfirmRequest" namespace="Andyts93\BrtApiWrapper\Request">
+          <metrics methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="5" elements="11" coveredelements="8"/>
+        </class>
+        <line num="36" type="method" name="setSenderCustomerCode" crap="1" count="3"/>
+        <line num="38" type="stmt" count="3"/>
+        <line num="39" type="stmt" count="3"/>
+        <line num="46" type="method" name="setNumericSenderReference" crap="1" count="3"/>
+        <line num="48" type="stmt" count="3"/>
+        <line num="49" type="stmt" count="3"/>
+        <line num="56" type="method" name="setAlphanumericSenderReference" crap="2" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="62" type="method" name="call" crap="1" count="2"/>
+        <line num="64" type="stmt" count="2"/>
+        <metrics loc="66" ncloc="45" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="5" elements="11" coveredelements="8"/>
+      </file>
+      <file name="/Users/andrea/Documents/Projects/Personali/brt-api-wrapper/src/Request/CreateRequest.php">
+        <class name="CreateRequest" namespace="Andyts93\BrtApiWrapper\Request">
+          <metrics methods="63" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="125" coveredstatements="25" elements="188" coveredelements="38"/>
+        </class>
+        <line num="339" type="method" name="call" crap="1" count="2"/>
+        <line num="341" type="stmt" count="2"/>
+        <line num="348" type="method" name="setNetwork" crap="2" count="0"/>
+        <line num="350" type="stmt" count="0"/>
+        <line num="351" type="stmt" count="0"/>
+        <line num="358" type="method" name="setDepartureDepot" crap="1" count="3"/>
+        <line num="360" type="stmt" count="3"/>
+        <line num="361" type="stmt" count="3"/>
+        <line num="368" type="method" name="setSenderCustomerCode" crap="1" count="3"/>
+        <line num="370" type="stmt" count="3"/>
+        <line num="371" type="stmt" count="3"/>
+        <line num="378" type="method" name="setDeliveryFreightTypeCode" crap="1" count="3"/>
+        <line num="380" type="stmt" count="3"/>
+        <line num="381" type="stmt" count="3"/>
+        <line num="388" type="method" name="setConsigneeCompanyName" crap="1" count="3"/>
+        <line num="390" type="stmt" count="3"/>
+        <line num="391" type="stmt" count="3"/>
+        <line num="398" type="method" name="setConsigneeAddress" crap="1" count="3"/>
+        <line num="400" type="stmt" count="3"/>
+        <line num="401" type="stmt" count="3"/>
+        <line num="408" type="method" name="setConsigneeZIPCode" crap="1" count="3"/>
+        <line num="410" type="stmt" count="3"/>
+        <line num="411" type="stmt" count="3"/>
+        <line num="418" type="method" name="setConsigneeCity" crap="1" count="3"/>
+        <line num="420" type="stmt" count="3"/>
+        <line num="421" type="stmt" count="3"/>
+        <line num="428" type="method" name="setConsigneeProvinceAbbreviation" crap="2" count="0"/>
+        <line num="430" type="stmt" count="0"/>
+        <line num="431" type="stmt" count="0"/>
+        <line num="438" type="method" name="setConsigneeCountryAbbreviationISOAlpha2" crap="1" count="3"/>
+        <line num="440" type="stmt" count="3"/>
+        <line num="441" type="stmt" count="3"/>
+        <line num="448" type="method" name="setConsigneeClosingShift1DayOfTheWeek" crap="2" count="0"/>
+        <line num="450" type="stmt" count="0"/>
+        <line num="451" type="stmt" count="0"/>
+        <line num="458" type="method" name="setConsigneeClosingShift1PeriodOfTheDay" crap="2" count="0"/>
+        <line num="460" type="stmt" count="0"/>
+        <line num="461" type="stmt" count="0"/>
+        <line num="468" type="method" name="setConsigneeClosingShift2DayOfTheWeek" crap="2" count="0"/>
+        <line num="470" type="stmt" count="0"/>
+        <line num="471" type="stmt" count="0"/>
+        <line num="478" type="method" name="setConsigneeClosingShift2PeriodOfTheDay" crap="2" count="0"/>
+        <line num="480" type="stmt" count="0"/>
+        <line num="481" type="stmt" count="0"/>
+        <line num="488" type="method" name="setConsigneeContactName" crap="2" count="0"/>
+        <line num="490" type="stmt" count="0"/>
+        <line num="491" type="stmt" count="0"/>
+        <line num="498" type="method" name="setConsigneeTelephone" crap="2" count="0"/>
+        <line num="500" type="stmt" count="0"/>
+        <line num="501" type="stmt" count="0"/>
+        <line num="508" type="method" name="setConsigneeEMail" crap="2" count="0"/>
+        <line num="510" type="stmt" count="0"/>
+        <line num="511" type="stmt" count="0"/>
+        <line num="518" type="method" name="setConsigneeMobilePhoneNumber" crap="2" count="0"/>
+        <line num="520" type="stmt" count="0"/>
+        <line num="521" type="stmt" count="0"/>
+        <line num="528" type="method" name="setIsAlertRequired" crap="2" count="0"/>
+        <line num="530" type="stmt" count="0"/>
+        <line num="531" type="stmt" count="0"/>
+        <line num="538" type="method" name="setConsigneeVATNumber" crap="2" count="0"/>
+        <line num="540" type="stmt" count="0"/>
+        <line num="541" type="stmt" count="0"/>
+        <line num="548" type="method" name="setConsigneeVATNumberCountryISOAlpha2" crap="2" count="0"/>
+        <line num="550" type="stmt" count="0"/>
+        <line num="551" type="stmt" count="0"/>
+        <line num="558" type="method" name="setConsigneeItalianFiscalCode" crap="2" count="0"/>
+        <line num="560" type="stmt" count="0"/>
+        <line num="561" type="stmt" count="0"/>
+        <line num="568" type="method" name="setPricingConditionCode" crap="2" count="0"/>
+        <line num="570" type="stmt" count="0"/>
+        <line num="571" type="stmt" count="0"/>
+        <line num="578" type="method" name="setServiceType" crap="2" count="0"/>
+        <line num="580" type="stmt" count="0"/>
+        <line num="581" type="stmt" count="0"/>
+        <line num="588" type="method" name="setInsuranceAmount" crap="2" count="0"/>
+        <line num="590" type="stmt" count="0"/>
+        <line num="591" type="stmt" count="0"/>
+        <line num="598" type="method" name="setInsuranceAmountCurrency" crap="2" count="0"/>
+        <line num="600" type="stmt" count="0"/>
+        <line num="601" type="stmt" count="0"/>
+        <line num="608" type="method" name="setSenderParcelType" crap="2" count="0"/>
+        <line num="610" type="stmt" count="0"/>
+        <line num="611" type="stmt" count="0"/>
+        <line num="618" type="method" name="setNumberOfParcels" crap="1" count="3"/>
+        <line num="620" type="stmt" count="3"/>
+        <line num="621" type="stmt" count="3"/>
+        <line num="628" type="method" name="setWeightKG" crap="1" count="3"/>
+        <line num="630" type="stmt" count="3"/>
+        <line num="631" type="stmt" count="3"/>
+        <line num="638" type="method" name="setVolumeM3" crap="2" count="0"/>
+        <line num="640" type="stmt" count="0"/>
+        <line num="641" type="stmt" count="0"/>
+        <line num="648" type="method" name="setQuantityToBeInvoiced" crap="2" count="0"/>
+        <line num="650" type="stmt" count="0"/>
+        <line num="651" type="stmt" count="0"/>
+        <line num="658" type="method" name="setCashOnDelivery" crap="2" count="0"/>
+        <line num="660" type="stmt" count="0"/>
+        <line num="661" type="stmt" count="0"/>
+        <line num="668" type="method" name="setIsCODMandatory" crap="1" count="3"/>
+        <line num="670" type="stmt" count="3"/>
+        <line num="671" type="stmt" count="3"/>
+        <line num="678" type="method" name="setCodPaymentType" crap="2" count="0"/>
+        <line num="680" type="stmt" count="0"/>
+        <line num="681" type="stmt" count="0"/>
+        <line num="688" type="method" name="setCodCurrency" crap="2" count="0"/>
+        <line num="690" type="stmt" count="0"/>
+        <line num="691" type="stmt" count="0"/>
+        <line num="698" type="method" name="setNumericSenderReference" crap="1" count="3"/>
+        <line num="700" type="stmt" count="3"/>
+        <line num="701" type="stmt" count="3"/>
+        <line num="708" type="method" name="setAlphanumericSenderReference" crap="2" count="0"/>
+        <line num="710" type="stmt" count="0"/>
+        <line num="711" type="stmt" count="0"/>
+        <line num="718" type="method" name="setNotes" crap="2" count="0"/>
+        <line num="720" type="stmt" count="0"/>
+        <line num="721" type="stmt" count="0"/>
+        <line num="728" type="method" name="setParcelsHandlingCode" crap="2" count="0"/>
+        <line num="730" type="stmt" count="0"/>
+        <line num="731" type="stmt" count="0"/>
+        <line num="738" type="method" name="setDeliveryDateRequired" crap="2" count="0"/>
+        <line num="740" type="stmt" count="0"/>
+        <line num="741" type="stmt" count="0"/>
+        <line num="748" type="method" name="setDeliveryType" crap="2" count="0"/>
+        <line num="750" type="stmt" count="0"/>
+        <line num="751" type="stmt" count="0"/>
+        <line num="758" type="method" name="setDeclaredParcelValue" crap="2" count="0"/>
+        <line num="760" type="stmt" count="0"/>
+        <line num="761" type="stmt" count="0"/>
+        <line num="768" type="method" name="setDeclaredParcelValueCurrency" crap="2" count="0"/>
+        <line num="770" type="stmt" count="0"/>
+        <line num="771" type="stmt" count="0"/>
+        <line num="778" type="method" name="setParticularitiesDeliveryManagementCode" crap="2" count="0"/>
+        <line num="780" type="stmt" count="0"/>
+        <line num="781" type="stmt" count="0"/>
+        <line num="788" type="method" name="setParticularitiesHoldOnStockManagementCode" crap="2" count="0"/>
+        <line num="790" type="stmt" count="0"/>
+        <line num="791" type="stmt" count="0"/>
+        <line num="798" type="method" name="setVariousParticularitiesManagementCode" crap="2" count="0"/>
+        <line num="800" type="stmt" count="0"/>
+        <line num="801" type="stmt" count="0"/>
+        <line num="808" type="method" name="setParticularDelivery1" crap="2" count="0"/>
+        <line num="810" type="stmt" count="0"/>
+        <line num="811" type="stmt" count="0"/>
+        <line num="818" type="method" name="setParticularDelivery2" crap="2" count="0"/>
+        <line num="820" type="stmt" count="0"/>
+        <line num="821" type="stmt" count="0"/>
+        <line num="828" type="method" name="setPalletType1" crap="2" count="0"/>
+        <line num="830" type="stmt" count="0"/>
+        <line num="831" type="stmt" count="0"/>
+        <line num="838" type="method" name="setPalletType1Number" crap="2" count="0"/>
+        <line num="840" type="stmt" count="0"/>
+        <line num="841" type="stmt" count="0"/>
+        <line num="848" type="method" name="setPalletType2" crap="2" count="0"/>
+        <line num="850" type="stmt" count="0"/>
+        <line num="851" type="stmt" count="0"/>
+        <line num="858" type="method" name="setPalletType2Number" crap="2" count="0"/>
+        <line num="860" type="stmt" count="0"/>
+        <line num="861" type="stmt" count="0"/>
+        <line num="868" type="method" name="setOriginalSenderCompanyName" crap="2" count="0"/>
+        <line num="870" type="stmt" count="0"/>
+        <line num="871" type="stmt" count="0"/>
+        <line num="878" type="method" name="setOriginalSenderZIPCode" crap="2" count="0"/>
+        <line num="880" type="stmt" count="0"/>
+        <line num="881" type="stmt" count="0"/>
+        <line num="888" type="method" name="setOriginalSenderCountryAbbreviationISOAlpha2" crap="2" count="0"/>
+        <line num="890" type="stmt" count="0"/>
+        <line num="891" type="stmt" count="0"/>
+        <line num="898" type="method" name="setCmrCode" crap="2" count="0"/>
+        <line num="900" type="stmt" count="0"/>
+        <line num="901" type="stmt" count="0"/>
+        <line num="908" type="method" name="setNeighborNameMandatoryAuthorization" crap="2" count="0"/>
+        <line num="910" type="stmt" count="0"/>
+        <line num="911" type="stmt" count="0"/>
+        <line num="918" type="method" name="setPinCodeMandatoryAuthorization" crap="2" count="0"/>
+        <line num="920" type="stmt" count="0"/>
+        <line num="921" type="stmt" count="0"/>
+        <line num="928" type="method" name="setPackingListPDFName" crap="2" count="0"/>
+        <line num="930" type="stmt" count="0"/>
+        <line num="931" type="stmt" count="0"/>
+        <line num="938" type="method" name="setPackingListPDFFlagPrint" crap="2" count="0"/>
+        <line num="940" type="stmt" count="0"/>
+        <line num="941" type="stmt" count="0"/>
+        <line num="948" type="method" name="setPackingListPDFFlagEmail" crap="2" count="0"/>
+        <line num="950" type="stmt" count="0"/>
+        <line num="951" type="stmt" count="0"/>
+        <line num="958" type="method" name="setPudoId" crap="2" count="0"/>
+        <line num="960" type="stmt" count="0"/>
+        <line num="961" type="stmt" count="0"/>
+        <metrics loc="963" ncloc="527" classes="1" methods="63" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="125" coveredstatements="25" elements="188" coveredelements="38"/>
+      </file>
+      <file name="/Users/andrea/Documents/Projects/Personali/brt-api-wrapper/src/Request/DeleteRequest.php">
+        <class name="DeleteRequest" namespace="Andyts93\BrtApiWrapper\Request">
+          <metrics methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="5" elements="11" coveredelements="8"/>
+        </class>
+        <line num="36" type="method" name="setSenderCustomerCode" crap="1" count="3"/>
+        <line num="38" type="stmt" count="3"/>
+        <line num="39" type="stmt" count="3"/>
+        <line num="46" type="method" name="setNumericSenderReference" crap="1" count="3"/>
+        <line num="48" type="stmt" count="3"/>
+        <line num="49" type="stmt" count="3"/>
+        <line num="56" type="method" name="setAlphanumericSenderReference" crap="2" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="62" type="method" name="call" crap="1" count="2"/>
+        <line num="64" type="stmt" count="2"/>
+        <metrics loc="66" ncloc="45" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="5" elements="11" coveredelements="8"/>
+      </file>
+      <file name="/Users/andrea/Documents/Projects/Personali/brt-api-wrapper/src/Request/LabelParameter.php">
+        <class name="LabelParameter" namespace="Andyts93\BrtApiWrapper\Request">
+          <metrics methods="7" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="7" elements="26" coveredelements="8"/>
+        </class>
+        <line num="37" type="method" name="__construct" crap="1" count="3"/>
+        <line num="46" type="stmt" count="3"/>
+        <line num="47" type="stmt" count="3"/>
+        <line num="48" type="stmt" count="3"/>
+        <line num="49" type="stmt" count="3"/>
+        <line num="50" type="stmt" count="3"/>
+        <line num="51" type="stmt" count="3"/>
+        <line num="52" type="stmt" count="3"/>
+        <line num="58" type="method" name="setOutputType" crap="2" count="0"/>
+        <line num="60" type="stmt" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="68" type="method" name="setOffsetX" crap="2" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <line num="71" type="stmt" count="0"/>
+        <line num="78" type="method" name="setOffsetY" crap="2" count="0"/>
+        <line num="80" type="stmt" count="0"/>
+        <line num="81" type="stmt" count="0"/>
+        <line num="88" type="method" name="setIsBorderRequired" crap="2" count="0"/>
+        <line num="90" type="stmt" count="0"/>
+        <line num="91" type="stmt" count="0"/>
+        <line num="98" type="method" name="setIsLogoRequired" crap="2" count="0"/>
+        <line num="100" type="stmt" count="0"/>
+        <line num="101" type="stmt" count="0"/>
+        <line num="108" type="method" name="setIsBarcodeControlRowRequired" crap="2" count="0"/>
+        <line num="110" type="stmt" count="0"/>
+        <line num="111" type="stmt" count="0"/>
+        <metrics loc="113" ncloc="71" classes="1" methods="7" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="7" elements="26" coveredelements="8"/>
+      </file>
+    </package>
+    <package name="Andyts93\BrtApiWrapper\Response">
+      <file name="/Users/andrea/Documents/Projects/Personali/brt-api-wrapper/src/Response/BaseResponse.php">
+        <class name="BaseResponse" namespace="Andyts93\BrtApiWrapper\Response">
+          <metrics methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="20" elements="31" coveredelements="20"/>
+        </class>
+        <line num="29" type="method" name="__construct" crap="7.04" count="3"/>
+        <line num="31" type="stmt" count="3"/>
+        <line num="32" type="stmt" count="3"/>
+        <line num="33" type="stmt" count="3"/>
+        <line num="34" type="stmt" count="3"/>
+        <line num="35" type="stmt" count="3"/>
+        <line num="36" type="stmt" count="3"/>
+        <line num="37" type="stmt" count="3"/>
+        <line num="38" type="stmt" count="3"/>
+        <line num="39" type="stmt" count="3"/>
+        <line num="41" type="stmt" count="3"/>
+        <line num="42" type="stmt" count="3"/>
+        <line num="43" type="stmt" count="3"/>
+        <line num="44" type="stmt" count="3"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="47" type="stmt" count="1"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="51" type="stmt" count="1"/>
+        <line num="53" type="stmt" count="3"/>
+        <line num="55" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="3"/>
+        <line num="60" type="method" name="hasError" crap="2" count="0"/>
+        <line num="62" type="stmt" count="0"/>
+        <line num="68" type="method" name="getCurrentTimeUTC" crap="2" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <line num="76" type="method" name="getExecutionMessage" crap="2" count="0"/>
+        <line num="78" type="stmt" count="0"/>
+        <line num="84" type="method" name="getExtraProperties" crap="2" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <metrics loc="88" ncloc="67" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="20" elements="31" coveredelements="20"/>
+      </file>
+      <file name="/Users/andrea/Documents/Projects/Personali/brt-api-wrapper/src/Response/ConfirmResponse.php">
+        <class name="ConfirmResponse" namespace="Andyts93\BrtApiWrapper\Response">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="8" ncloc="8" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+      <file name="/Users/andrea/Documents/Projects/Personali/brt-api-wrapper/src/Response/CreateResponse.php">
+        <class name="CreateResponse" namespace="Andyts93\BrtApiWrapper\Response">
+          <metrics methods="22" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="0" elements="44" coveredelements="0"/>
+        </class>
+        <line num="122" type="method" name="getArrivalTerminal" crap="2" count="0"/>
+        <line num="124" type="stmt" count="0"/>
+        <line num="130" type="method" name="getArrivalDepot" crap="2" count="0"/>
+        <line num="132" type="stmt" count="0"/>
+        <line num="138" type="method" name="getDeliveryZone" crap="2" count="0"/>
+        <line num="140" type="stmt" count="0"/>
+        <line num="146" type="method" name="getParcelNumberFrom" crap="2" count="0"/>
+        <line num="148" type="stmt" count="0"/>
+        <line num="154" type="method" name="getParcelNumberTo" crap="2" count="0"/>
+        <line num="156" type="stmt" count="0"/>
+        <line num="162" type="method" name="getDepartureDepot" crap="2" count="0"/>
+        <line num="164" type="stmt" count="0"/>
+        <line num="170" type="method" name="getSeriesNumber" crap="2" count="0"/>
+        <line num="172" type="stmt" count="0"/>
+        <line num="178" type="method" name="getServiceType" crap="2" count="0"/>
+        <line num="180" type="stmt" count="0"/>
+        <line num="186" type="method" name="getConsigneeCompanyName" crap="2" count="0"/>
+        <line num="188" type="stmt" count="0"/>
+        <line num="194" type="method" name="getConsigneeAddress" crap="2" count="0"/>
+        <line num="196" type="stmt" count="0"/>
+        <line num="202" type="method" name="getConsigneeZIPCode" crap="2" count="0"/>
+        <line num="204" type="stmt" count="0"/>
+        <line num="210" type="method" name="getConsigneeCity" crap="2" count="0"/>
+        <line num="212" type="stmt" count="0"/>
+        <line num="218" type="method" name="getConsigneeProvinceAbbreviation" crap="2" count="0"/>
+        <line num="220" type="stmt" count="0"/>
+        <line num="226" type="method" name="getConsigneeCountryAbbreviationBRT" crap="2" count="0"/>
+        <line num="228" type="stmt" count="0"/>
+        <line num="234" type="method" name="getNumberOfParcels" crap="2" count="0"/>
+        <line num="236" type="stmt" count="0"/>
+        <line num="242" type="method" name="getWeightKG" crap="2" count="0"/>
+        <line num="244" type="stmt" count="0"/>
+        <line num="250" type="method" name="getVolumeM3" crap="2" count="0"/>
+        <line num="252" type="stmt" count="0"/>
+        <line num="258" type="method" name="getAlphanumericSenderReference" crap="2" count="0"/>
+        <line num="260" type="stmt" count="0"/>
+        <line num="266" type="method" name="getSenderCompanyName" crap="2" count="0"/>
+        <line num="268" type="stmt" count="0"/>
+        <line num="274" type="method" name="getSenderProvinceAbbreviation" crap="2" count="0"/>
+        <line num="276" type="stmt" count="0"/>
+        <line num="282" type="method" name="getLabels" crap="2" count="0"/>
+        <line num="284" type="stmt" count="0"/>
+        <line num="290" type="method" name="getDisclaimer" crap="2" count="0"/>
+        <line num="292" type="stmt" count="0"/>
+        <metrics loc="294" ncloc="162" classes="1" methods="22" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="0" elements="44" coveredelements="0"/>
+      </file>
+      <file name="/Users/andrea/Documents/Projects/Personali/brt-api-wrapper/src/Response/DeleteResponse.php">
+        <class name="DeleteResponse" namespace="Andyts93\BrtApiWrapper\Response">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="8" ncloc="8" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+      <file name="/Users/andrea/Documents/Projects/Personali/brt-api-wrapper/src/Response/ExecutionMessage.php">
+        <class name="ExecutionMessage" namespace="Andyts93\BrtApiWrapper\Response">
+          <metrics methods="5" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="5" elements="14" coveredelements="6"/>
+        </class>
+        <line num="38" type="method" name="__construct" crap="1" count="3"/>
+        <line num="40" type="stmt" count="3"/>
+        <line num="41" type="stmt" count="3"/>
+        <line num="42" type="stmt" count="3"/>
+        <line num="43" type="stmt" count="3"/>
+        <line num="44" type="stmt" count="3"/>
+        <line num="49" type="method" name="getCode" crap="2" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="57" type="method" name="getSeverity" crap="2" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="65" type="method" name="getCodeDesc" crap="2" count="0"/>
+        <line num="67" type="stmt" count="0"/>
+        <line num="73" type="method" name="getMessage" crap="2" count="0"/>
+        <line num="75" type="stmt" count="0"/>
+        <metrics loc="77" ncloc="42" classes="1" methods="5" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="5" elements="14" coveredelements="6"/>
+      </file>
+      <file name="/Users/andrea/Documents/Projects/Personali/brt-api-wrapper/src/Response/Label.php">
+        <class name="Label" namespace="Andyts93\BrtApiWrapper\Response">
+          <metrics methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="18" coveredelements="0"/>
+        </class>
+        <line num="22" type="method" name="__construct" crap="2" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="33" type="method" name="getDataLength" crap="2" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="41" type="method" name="getParcelID" crap="2" count="0"/>
+        <line num="42" type="stmt" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="49" type="method" name="getStream" crap="2" count="0"/>
+        <line num="50" type="stmt" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="52" type="stmt" count="0"/>
+        <metrics loc="53" ncloc="35" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="18" coveredelements="0"/>
+      </file>
+    </package>
+    <metrics files="14" loc="1899" ncloc="1141" classes="14" methods="122" coveredmethods="26" conditionals="0" coveredconditionals="0" statements="270" coveredstatements="97" elements="392" coveredelements="123"/>
+  </project>
+</coverage>

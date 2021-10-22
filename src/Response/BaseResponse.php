@@ -32,7 +32,12 @@ class BaseResponse
             if (property_exists($this, $key)) {
                 switch ($key) {
                     case 'executionMessage':
-                        $value = new ExecutionMessage($value->code, $value->severity, $value->codeDesc, $value->message);
+                        $value = new ExecutionMessage(
+                            $value->code,
+                            $value->severity,
+                            $value->codeDesc,
+                            $value->message
+                        );
                         break;
                     case 'currentTimeUTC':
                         $value = DateTime::createFromFormat('Y-m-d-H.i.s.uP', $value);
@@ -80,5 +85,4 @@ class BaseResponse
     {
         return $this->extraProperties;
     }
-
 }

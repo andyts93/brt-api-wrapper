@@ -291,6 +291,4 @@ class CreateResponse extends BaseResponse
     {
         return $this->disclaimer;
     }
-
-
 }

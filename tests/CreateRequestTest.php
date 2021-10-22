@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests;
+
 use Andyts93\BrtApiWrapper\Request\CreateRequest;
 use Andyts93\BrtApiWrapper\Request\LabelParameter;
 use Faker\Factory;
@@ -38,6 +40,16 @@ class CreateRequestTest extends TestCase
 
         $this->assertArrayHasKey('createData', $body);
         $this->assertArrayHasKey('createData', $body);
+    }
+
+    public function testHasNotMandatoryFields()
+    {
+        $request = $this->buildRequest();
+
+        $request->setDepartureDepot(null);
+
+        $this->setExpectedException('Andyts93\BrtApiWrapper\Exception\RequestException');
+        $request->call();
     }
 
     public function testCreateResponseSuccessful()
