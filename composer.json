@@ -20,13 +20,17 @@
     "scripts": {
         "test": "vendor/bin/phpunit"
     },
+    "config": {
+        "platform": {
+            "php": "5.4.45"
+        }
+    },
     "require": {
-        "php": ">=5.4.45",
-        "guzzlehttp/guzzle": "^7.4",
-        "ext-json": "*"
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^5.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5",
-        "fzaninotto/faker": "^1.9"
+        "fzaninotto/faker": "^1.9",
+        "phpunit/phpunit": "^4.8"
     }
 }
