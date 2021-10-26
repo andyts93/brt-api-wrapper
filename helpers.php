@@ -20,10 +20,6 @@ if (!function_exists('json_last_error_msg')) {
                 return 'NAN or INF values in the value to be encoded';
             case JSON_ERROR_UNSUPPORTED_TYPE:
                 return 'A value of a type that cannot be encoded was given';
-            case 9:
-                return 'A property name that cannot be encoded was given';
-            case 10:
-                return 'Malformed UTF-16 characters, possibly incorrectly encoded';
         }
     }
 }

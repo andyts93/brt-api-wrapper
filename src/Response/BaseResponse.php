@@ -2,6 +2,7 @@
 
 namespace Andyts93\BrtApiWrapper\Response;
 
+use Andyts93\BrtApiWrapper\Api\Label;
 use DateTime;
 
 class BaseResponse
@@ -62,6 +63,11 @@ class BaseResponse
         return $this->executionMessage->getCode() !== 0;
     }
 
+    public function hasWarning()
+    {
+        return $this->executionMessage->getCode() > 0;
+    }
+
     /**
      * @return DateTime
      */
@@ -84,5 +90,16 @@ class BaseResponse
     public function getExtraProperties()
     {
         return $this->extraProperties;
+    }
+
+    /**
+     * @param string $name
+     * @param mixed $value
+     * @return BaseResponse
+     */
+    public function addExtraProperties($name, $value)
+    {
+        $this->extraProperties[$name] = $value;
+        return $this;
     }
 }
