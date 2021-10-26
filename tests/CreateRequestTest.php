@@ -61,12 +61,12 @@ class CreateRequestTest extends TestCase
     {
         $request = $this->buildRequest();
 
-        // $response = $request->call();
+         $response = $request->call();
 
         print_r($request->createRequestBody());
-        // print_r($response);
+         print_r($response);
 
-        $this->assertInstanceOf('Andyts93\BrtApiWrapper\Response\CreateResponse', $response);
-        // $this->assertFalse($response->hasError());
+//        $this->assertInstanceOf('Andyts93\BrtApiWrapper\Response\CreateResponse', $response);
+//         $this->assertFalse($response->hasError());
     }
 }
