@@ -9,7 +9,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use ReflectionObject;
 
-class BaseRequest
+abstract class BaseRequest implements RequestInterface
 {
     protected $account;
     protected $endpoint;
@@ -18,6 +18,7 @@ class BaseRequest
     protected $dataWrapper = 'data';
     protected $mandatoryFields = [];
     protected $isLabelRequired;
+
     protected $senderCustomerCode;
     /**
      * @var int
@@ -88,21 +89,21 @@ class BaseRequest
         return array_merge(['account' => $this->account], [$this->dataWrapper => $this->toArray()]);
     }
 
-    public function toArray()
-    {
-        $reflection = new ReflectionObject($this);
-        $properties = [];
-        foreach ($reflection->getProperties() as $property) {
-//            if (in_array($property->getName(), $this->apiProperties)) {
-            if ($property->isPrivate()) {
-                $property->setAccessible(true);
-                if (!is_null($property->getValue($this))) {
-                    $properties[$property->getName()] = $property->getValue($this);
-                }
-            }
-        }
-        return $properties;
-    }
+//    public function toArray()
+//    {
+//        $reflection = new ReflectionObject($this);
+//        $properties = [];
+//        foreach ($reflection->getProperties() as $property) {
+////            if (in_array($property->getName(), $this->apiProperties)) {
+//            if ($property->isPrivate()) {
+//                $property->setAccessible(true);
+//                if (!is_null($property->getValue($this))) {
+//                    $properties[$property->getName()] = $property->getValue($this);
+//                }
+//            }
+//        }
+//        return $properties;
+//    }
 
     /**
      * @param mixed $isLabelRequired

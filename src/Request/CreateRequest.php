@@ -40,7 +40,9 @@ class CreateRequest extends BaseRequest
      */
     private $deliveryFreightTypeCode;
 
-    /** @var Consignee */
+    /**
+     * @var Consignee
+     */
     private $consignee;
 
     /**
@@ -241,6 +243,22 @@ class CreateRequest extends BaseRequest
     public function call()
     {
         return new CreateResponse(parent::call());
+    }
+
+    public function toArray()
+    {
+        return  [
+            'network' => $this->network,
+            'departureDepot' => $this->departureDepot,
+            'senderCustomerCode' => $this->senderCustomerCode,
+            'deliveryFreightTypeCode' => $this->deliveryFreightTypeCode,
+            'consigneeCompanyName' => $this->consignee->getCompanyName(),
+            'consigneeAddress' => $this->consignee->getAddress(),
+            'consigneeZIPCode' => $this->consignee->getZipCode(),
+            'consigneeCity' => $this->consignee->getCity(),
+            'consigneeProvinceAbbreviation' => $this->consignee->getProvince(),
+            'consigneeCountryAbbreviationISOAlpha2' => $this->consignee->getCountry()
+        ];
     }
 
     /**

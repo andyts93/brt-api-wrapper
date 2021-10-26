@@ -224,4 +224,140 @@ class Consignee
         $this->italianFiscalCode = $italianFiscalCode;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getCompanyName()
+    {
+        return $this->companyName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @return string
+     */
+    public function getZipCode()
+    {
+        return $this->zipCode;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProvince()
+    {
+        return $this->province;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @return string
+     */
+    public function getClosingShift1DayOfTheWeek()
+    {
+        return $this->closingShift1_DayOfTheWeek;
+    }
+
+    /**
+     * @return string
+     */
+    public function getClosingShift1PeriodOfTheDay()
+    {
+        return $this->closingShift1_PeriodOfTheDay;
+    }
+
+    /**
+     * @return string
+     */
+    public function getClosingShift2DayOfTheWeek()
+    {
+        return $this->closingShift2_DayOfTheWeek;
+    }
+
+    /**
+     * @return string
+     */
+    public function getClosingShift2PeriodOfTheDay()
+    {
+        return $this->closingShift2_PeriodOfTheDay;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContactName()
+    {
+        return $this->contactName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMobilePhone()
+    {
+        return $this->mobilePhone;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVatNumber()
+    {
+        return $this->vatNumber;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVatCountry()
+    {
+        return $this->vatCountry;
+    }
+
+    /**
+     * @return string
+     */
+    public function getItalianFiscalCode()
+    {
+        return $this->italianFiscalCode;
+    }
 }

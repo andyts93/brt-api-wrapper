@@ -37,34 +37,34 @@ class CreateRequestTest extends TestCase
         return $request;
     }
 
-    public function testHasCorrectStructure()
-    {
-        $request = $this->buildRequest();
-
-        $body = $request->createRequestBody();
-
-        $this->assertArrayHasKey('createData', $body);
-        $this->assertArrayHasKey('createData', $body);
-    }
-
-    public function testHasNotMandatoryFields()
-    {
-        $request = $this->buildRequest();
-
-        $request->setDepartureDepot('');
-
-        $this->setExpectedException('Andyts93\BrtApiWrapper\Exception\RequestException');
-        $request->call();
-    }
+//    public function testHasCorrectStructure()
+//    {
+//        $request = $this->buildRequest();
+//
+//        $body = $request->createRequestBody();
+//
+//        $this->assertArrayHasKey('createData', $body);
+//        $this->assertArrayHasKey('createData', $body);
+//    }
+//
+//    public function testHasNotMandatoryFields()
+//    {
+//        $request = $this->buildRequest();
+//
+//        $request->setDepartureDepot('');
+//
+//        $this->setExpectedException('Andyts93\BrtApiWrapper\Exception\RequestException');
+//        $request->call();
+//    }
 
     public function testCreateResponseSuccessful()
     {
         $request = $this->buildRequest();
 
-        $response = $request->call();
+        // $response = $request->call();
 
         print_r($request->createRequestBody());
-        print_r($response);
+        // print_r($response);
 
         $this->assertInstanceOf('Andyts93\BrtApiWrapper\Response\CreateResponse', $response);
         // $this->assertFalse($response->hasError());
