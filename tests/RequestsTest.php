@@ -11,7 +11,7 @@ use Andyts93\BrtApiWrapper\Response\CreateResponse;
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
 
-class CreateRequestTest extends TestCase
+class RequestsTest extends TestCase
 {
     public function testHasCorrectStructure()
     {
