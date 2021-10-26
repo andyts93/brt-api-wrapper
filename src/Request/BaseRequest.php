@@ -73,13 +73,13 @@ abstract class BaseRequest implements RequestInterface
 
     public function toArray()
     {
-        return array_filter([
+        return [$this->dataWrapper => array_filter([
             'senderCustomerCode' => $this->senderCustomerCode,
             'numericSenderReference' => $this->numericSenderReference,
             'alphanumericSenderReference' => $this->alphanumericSenderReference
         ], function ($v) {
             return !is_null($v);
-        });
+        })];
     }
 
     public function createRequestBody()
@@ -149,5 +149,13 @@ abstract class BaseRequest implements RequestInterface
     {
         $this->alphanumericSenderReference = $alphanumericSenderReference;
         return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumericSenderReference()
+    {
+        return $this->numericSenderReference;
     }
 }

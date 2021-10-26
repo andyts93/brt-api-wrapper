@@ -91,4 +91,15 @@ class BaseResponse
     {
         return $this->extraProperties;
     }
+
+    /**
+     * @param string $name
+     * @param mixed $value
+     * @return BaseResponse
+     */
+    public function addExtraProperties($name, $value)
+    {
+        $this->extraProperties[$name] = $value;
+        return $this;
+    }
 }

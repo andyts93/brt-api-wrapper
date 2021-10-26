@@ -4,7 +4,10 @@ namespace Tests;
 
 use Andyts93\BrtApiWrapper\Api\Consignee;
 use Andyts93\BrtApiWrapper\Api\LabelParameter;
+use Andyts93\BrtApiWrapper\Request\ConfirmRequest;
 use Andyts93\BrtApiWrapper\Request\CreateRequest;
+use Andyts93\BrtApiWrapper\Request\DeleteRequest;
+use Andyts93\BrtApiWrapper\Response\CreateResponse;
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
 
@@ -65,6 +68,9 @@ class CreateRequestTest extends TestCase
 
         $this->assertInstanceOf('Andyts93\BrtApiWrapper\Response\CreateResponse', $response);
         $this->assertFalse($response->hasError());
+
+        $response->addExtraProperties('numericSenderReference', $request->getNumericSenderReference());
+        return $response;
     }
 
     public function testCreateResponseSuccessfulWithWarning()
@@ -76,5 +82,40 @@ class CreateRequestTest extends TestCase
 
         $this->assertInstanceOf('Andyts93\BrtApiWrapper\Response\CreateResponse', $response);
         $this->assertTrue($response->hasWarning());
+    }
+
+    /**
+     * @depends testCreateResponseSuccessful
+     */
+    public function testConfirmRequestSuccessful(CreateResponse $createResult)
+    {
+        $request = new ConfirmRequest('1020109', 'brt8045st');
+
+        $request->setNumericSenderReference($createResult->getExtraProperties()['numericSenderReference'])
+            ->setAlphanumericSenderReference($createResult->getAlphanumericSenderReference())
+            ->setSenderCustomerCode('1020109');
+        sleep(60*5);
+
+        $response = $request->call();
+
+        $this->assertFalse($response->hasError());
+    }
+
+    /**
+     * @depends testCreateResponseSuccessful
+     */
+    public function testDeleteRequestSuccessful(CreateResponse $createResult)
+    {
+        $request = new DeleteRequest('1020109', 'brt8045st');
+
+        $request->setNumericSenderReference($createResult->getExtraProperties()['numericSenderReference'])
+            ->setAlphanumericSenderReference($createResult->getAlphanumericSenderReference())
+            ->setSenderCustomerCode('1020109');
+        sleep(60*5);
+
+        $response = $request->call();
+        print_r($response);
+
+        $this->assertFalse($response->hasError());
     }
 }

@@ -18,9 +18,4 @@ class DeleteRequest extends BaseRequest
     {
         return new DeleteResponse(parent::call());
     }
-
-    public function toArray()
-    {
-        // TODO: Implement toArray() method.
-    }
 }

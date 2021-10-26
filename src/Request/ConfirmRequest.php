@@ -18,9 +18,4 @@ class ConfirmRequest extends BaseRequest
     {
         return new ConfirmResponse(parent::call());
     }
-
-    public function toArray()
-    {
-        // TODO: Implement toArray() method.
-    }
 }
