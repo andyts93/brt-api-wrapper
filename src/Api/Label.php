@@ -1,6 +1,6 @@
 <?php
 
-namespace Andyts93\BrtApiWrapper\Response;
+namespace Andyts93\BrtApiWrapper\Api;
 
 class Label
 {

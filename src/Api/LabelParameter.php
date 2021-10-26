@@ -110,4 +110,16 @@ class LabelParameter
         $this->isBarcodeControlRowRequired = $isBarcodeControlRowRequired;
         return $this;
     }
+
+    public function toArray()
+    {
+        return [
+            'outputType' => $this->outputType,
+            'offsetX' => $this->offsetX,
+            'offsetY' => $this->offsetY,
+            'isBorderRequired' => $this->isBorderRequired ? "S" : "N",
+            'isLogoRequired' => $this->isLogoRequired ? "S" : "N",
+            'isBarcodeControlRowRequired' => $this->isBarcodeControlRowRequired ? "S" : "N"
+        ];
+    }
 }

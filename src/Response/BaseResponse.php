@@ -2,6 +2,7 @@
 
 namespace Andyts93\BrtApiWrapper\Response;
 
+use Andyts93\BrtApiWrapper\Api\Label;
 use DateTime;
 
 class BaseResponse
@@ -60,6 +61,11 @@ class BaseResponse
     public function hasError()
     {
         return $this->executionMessage->getCode() !== 0;
+    }
+
+    public function hasWarning()
+    {
+        return $this->executionMessage->getCode() > 0;
     }
 
     /**

@@ -71,14 +71,26 @@ abstract class BaseRequest implements RequestInterface
         return $response;
     }
 
+    public function toArray()
+    {
+        return array_filter([
+            'senderCustomerCode' => $this->senderCustomerCode,
+            'numericSenderReference' => $this->numericSenderReference,
+            'alphanumericSenderReference' => $this->alphanumericSenderReference
+        ], function ($v) {
+            return !is_null($v);
+        });
+    }
+
     public function createRequestBody()
     {
 //        PHP 5.6+ only
 //        $emptyMandatory = array_filter($this->toArray(), function ($v, $k) {
 //            return in_array($k, $this->mandatoryFields) && (is_null($v) || $v === "");
 //        }, 1);
+        $arr = $this->toArray();
         $emptyMandatory = [];
-        foreach ($this->toArray() as $k => $v) {
+        foreach ($arr[$this->dataWrapper] as $k => $v) {
             if (in_array($k, $this->mandatoryFields) && (is_null($v) || $v === "")) {
                 $emptyMandatory[$k] = $v;
             }
@@ -86,24 +98,8 @@ abstract class BaseRequest implements RequestInterface
         if (count($emptyMandatory) > 0) {
             throw new RequestException(sprintf('Fields %s are mandatory', implode(', ', array_keys($emptyMandatory))));
         }
-        return array_merge(['account' => $this->account], [$this->dataWrapper => $this->toArray()]);
+        return array_merge(['account' => $this->account], $arr);
     }
-
-//    public function toArray()
-//    {
-//        $reflection = new ReflectionObject($this);
-//        $properties = [];
-//        foreach ($reflection->getProperties() as $property) {
-////            if (in_array($property->getName(), $this->apiProperties)) {
-//            if ($property->isPrivate()) {
-//                $property->setAccessible(true);
-//                if (!is_null($property->getValue($this))) {
-//                    $properties[$property->getName()] = $property->getValue($this);
-//                }
-//            }
-//        }
-//        return $properties;
-//    }
 
     /**
      * @param mixed $isLabelRequired

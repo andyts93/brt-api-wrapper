@@ -247,69 +247,76 @@ class CreateRequest extends BaseRequest
 
     public function toArray()
     {
-        return  [
-            'network' => $this->network,
-            'departureDepot' => $this->departureDepot,
-            'senderCustomerCode' => $this->senderCustomerCode,
-            'deliveryFreightTypeCode' => $this->deliveryFreightTypeCode,
-            'consigneeCompanyName' => $this->consignee->getCompanyName(),
-            'consigneeAddress' => $this->consignee->getAddress(),
-            'consigneeZIPCode' => $this->consignee->getZipCode(),
-            'consigneeCity' => $this->consignee->getCity(),
-            'consigneeProvinceAbbreviation' => $this->consignee->getProvince(),
-            'consigneeCountryAbbreviationISOAlpha2' => $this->consignee->getCountry(),
-            'consigneeClosingShift1_DayOfTheWeek' => $this->consignee->getClosingShift1DayOfTheWeek(),
-            'consigneeClosingShift1_PeriodOfTheDay' => $this->consignee->getClosingShift1PeriodOfTheDay(),
-            'consigneeClosingShift2_DayOfTheWeek' => $this->consignee->getClosingShift2DayOfTheWeek(),
-            'consigneeClosingShift2_PeriodOfTheDay' => $this->consignee->getClosingShift2PeriodOfTheDay(),
-            'consigneeContactName' => $this->consignee->getContactName(),
-            'consigneeEmail' => $this->consignee->getEmail(),
-            'consigneeMobilePhoneNumber' => $this->consignee->getMobilePhone(),
-            'isAlertRequired' => $this->isAlertRequired,
-            'consigneeVATNumber' => $this->consignee->getVatNumber(),
-            'consigneeVATNumberCountryISOAlpha2' => $this->consignee->getVatCountry(),
-            'consigneeItalianFiscalCode' => $this->consignee->getItalianFiscalCode(),
-            'pricingConditionCode' => $this->pricingConditionCode,
-            'serviceType' => $this->serviceType,
-            'insuranceAmount' => $this->insuranceAmount,
-            'insuranceAmountCurrency' => $this->insuranceAmountCurrency,
-            'senderParcelType' => $this->senderParcelType,
-            'numberOfParcels' => $this->numberOfParcels,
-            'weightKG' => $this->weightKG,
-            'volumeM3' => $this->volumeM3,
-            'quantityToBeInvoiced' => $this->quantityToBeInvoiced,
-            'cashOnDelivery' => $this->cashOnDelivery,
-            'isCODMandatory' => $this->isCODMandatory,
-            'codPaymentType' => $this->codPaymentType,
-            'codCurrency' => $this->codCurrency,
-            'numericSenderReference' => $this->numericSenderReference,
-            'alphanumericSenderReference' => $this->alphanumericSenderReference,
-            'notes' => $this->notes,
-            'parcelsHandlingCode' => $this->parcelsHandlingCode,
-            'deliveryDateRequired' => $this->deliveryDateRequired,
-            'deliveryType' => $this->deliveryType,
-            'declaredParcelValue' => $this->declaredParcelValue,
-            'declaredParcelValueCurrency' => $this->declaredParcelValueCurrency,
-            'particularitiesDeliveryManagementCode' => $this->particularitiesDeliveryManagementCode,
-            'particularitiesHoldOnStockManagementCode' => $this->particularitiesHoldOnStockManagementCode,
-            'variousParticularitiesManagementCode' => $this->variousParticularitiesManagementCode,
-            'particularDelivery1' => $this->particularDelivery1,
-            'particularDelivery2' => $this->particularDelivery2,
-            'palletType1' => $this->palletType1,
-            'palletType1Number' => $this->palletType1Number,
-            'palletType2' => $this->palletType2,
-            'palletType2Number' => $this->palletType2Number,
-            'originalSenderCompanyName' => $this->originalSenderCompanyName,
-            'originalSenderZIPCode' => $this->originalSenderZIPCode,
-            'originalSenderCountryAbbreviationISOAlpha2' => $this->originalSenderCountryAbbreviationISOAlpha2,
-            'cmrCode' => $this->cmrCode,
-            'neighborNameMandatoryAuthorization' => $this->neighborNameMandatoryAuthorization,
-            'pinCodeMandatoryAuthorization' => $this->pinCodeMandatoryAuthorization,
-            'packingListPDFName' => $this->packingListPDFName,
-            'packingListPDFFlagPrint' => $this->packingListPDFFlagPrint,
-            'packingListPDFFlagEmail' => $this->packingListPDFFlagEmail,
-            'pudoId' => $this->pudoId
-        ];
+        return array_filter([
+            $this->dataWrapper => array_filter([
+                'network' => $this->network,
+                'departureDepot' => $this->departureDepot,
+                'senderCustomerCode' => $this->senderCustomerCode,
+                'deliveryFreightTypeCode' => $this->deliveryFreightTypeCode,
+                'consigneeCompanyName' => $this->consignee->getCompanyName(),
+                'consigneeAddress' => $this->consignee->getAddress(),
+                'consigneeZIPCode' => $this->consignee->getZipCode(),
+                'consigneeCity' => $this->consignee->getCity(),
+                'consigneeProvinceAbbreviation' => $this->consignee->getProvince(),
+                'consigneeCountryAbbreviationISOAlpha2' => $this->consignee->getCountry(),
+                'consigneeClosingShift1_DayOfTheWeek' => $this->consignee->getClosingShift1DayOfTheWeek(),
+                'consigneeClosingShift1_PeriodOfTheDay' => $this->consignee->getClosingShift1PeriodOfTheDay(),
+                'consigneeClosingShift2_DayOfTheWeek' => $this->consignee->getClosingShift2DayOfTheWeek(),
+                'consigneeClosingShift2_PeriodOfTheDay' => $this->consignee->getClosingShift2PeriodOfTheDay(),
+                'consigneeContactName' => $this->consignee->getContactName(),
+                'consigneeTelephone' => $this->consignee->getTelephone(),
+                'consigneeEmail' => $this->consignee->getEmail(),
+                'consigneeMobilePhoneNumber' => $this->consignee->getMobilePhone(),
+                'isAlertRequired' => $this->isAlertRequired,
+                'consigneeVATNumber' => $this->consignee->getVatNumber(),
+                'consigneeVATNumberCountryISOAlpha2' => $this->consignee->getVatCountry(),
+                'consigneeItalianFiscalCode' => $this->consignee->getItalianFiscalCode(),
+                'pricingConditionCode' => $this->pricingConditionCode,
+                'serviceType' => $this->serviceType,
+                'insuranceAmount' => $this->insuranceAmount,
+                'insuranceAmountCurrency' => $this->insuranceAmountCurrency,
+                'senderParcelType' => $this->senderParcelType,
+                'numberOfParcels' => $this->numberOfParcels,
+                'weightKG' => $this->weightKG,
+                'volumeM3' => $this->volumeM3,
+                'quantityToBeInvoiced' => $this->quantityToBeInvoiced,
+                'cashOnDelivery' => $this->cashOnDelivery,
+                'isCODMandatory' => $this->isCODMandatory,
+                'codPaymentType' => $this->codPaymentType,
+                'codCurrency' => $this->codCurrency,
+                'numericSenderReference' => $this->numericSenderReference,
+                'alphanumericSenderReference' => $this->alphanumericSenderReference,
+                'notes' => $this->notes,
+                'parcelsHandlingCode' => $this->parcelsHandlingCode,
+                'deliveryDateRequired' => $this->deliveryDateRequired,
+                'deliveryType' => $this->deliveryType,
+                'declaredParcelValue' => $this->declaredParcelValue,
+                'declaredParcelValueCurrency' => $this->declaredParcelValueCurrency,
+                'particularitiesDeliveryManagementCode' => $this->particularitiesDeliveryManagementCode,
+                'particularitiesHoldOnStockManagementCode' => $this->particularitiesHoldOnStockManagementCode,
+                'variousParticularitiesManagementCode' => $this->variousParticularitiesManagementCode,
+                'particularDelivery1' => $this->particularDelivery1,
+                'particularDelivery2' => $this->particularDelivery2,
+                'palletType1' => $this->palletType1,
+                'palletType1Number' => $this->palletType1Number,
+                'palletType2' => $this->palletType2,
+                'palletType2Number' => $this->palletType2Number,
+                'originalSenderCompanyName' => $this->originalSenderCompanyName,
+                'originalSenderZIPCode' => $this->originalSenderZIPCode,
+                'originalSenderCountryAbbreviationISOAlpha2' => $this->originalSenderCountryAbbreviationISOAlpha2,
+                'cmrCode' => $this->cmrCode,
+                'neighborNameMandatoryAuthorization' => $this->neighborNameMandatoryAuthorization,
+                'pinCodeMandatoryAuthorization' => $this->pinCodeMandatoryAuthorization,
+                'packingListPDFName' => $this->packingListPDFName,
+                'packingListPDFFlagPrint' => $this->packingListPDFFlagPrint,
+                'packingListPDFFlagEmail' => $this->packingListPDFFlagEmail,
+                'pudoId' => $this->pudoId], function ($v) { return !is_null($v); })
+            ,
+            'isLabelRequired' => $this->isLabelRequired,
+            'labelParameters' => $this->labelParameters->toArray()
+        ], function ($v) {
+            return !is_null($v);
+        });
     }
 
     /**
@@ -739,5 +746,13 @@ class CreateRequest extends BaseRequest
     {
         $this->consignee = $consignee;
         return $this;
+    }
+
+    /**
+     * @return Consignee
+     */
+    public function getConsignee()
+    {
+        return $this->consignee;
     }
 }

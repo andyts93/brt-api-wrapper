@@ -3,13 +3,23 @@
 namespace Tests;
 
 use Andyts93\BrtApiWrapper\Api\Consignee;
-use Andyts93\BrtApiWrapper\Request\CreateRequest;
 use Andyts93\BrtApiWrapper\Api\LabelParameter;
+use Andyts93\BrtApiWrapper\Request\CreateRequest;
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
 
 class CreateRequestTest extends TestCase
 {
+    public function testHasCorrectStructure()
+    {
+        $request = $this->buildRequest();
+
+        $body = $request->createRequestBody();
+
+        $this->assertArrayHasKey('createData', $body);
+        $this->assertArrayHasKey('createData', $body);
+    }
+
     private function buildRequest()
     {
         $faker = Factory::create('it_IT');
@@ -21,12 +31,12 @@ class CreateRequestTest extends TestCase
             ->setDeliveryFreightTypeCode('DAP')
             ->setConsignee(
                 (new Consignee())
-                ->setCity('Castiglione delle Stiviere')
-                ->setAddress('Via Donatori di Sangue 11')
-                ->setCompanyName($faker->company)
-                ->setCountry('IT')
-                ->setProvince('MN')
-                ->setZipCode('46043')
+                    ->setCity('Castiglione delle Stiviere')
+                    ->setAddress('Via Donatori di Sangue 11')
+                    ->setCompanyName($faker->company)
+                    ->setCountry('IT')
+                    ->setProvince('MN')
+                    ->setZipCode('46043')
             )
             ->setNumberOfParcels($faker->numberBetween(1, 5))
             ->setWeightKG($faker->randomFloat(1, 1, 100))
@@ -37,36 +47,34 @@ class CreateRequestTest extends TestCase
         return $request;
     }
 
-//    public function testHasCorrectStructure()
-//    {
-//        $request = $this->buildRequest();
-//
-//        $body = $request->createRequestBody();
-//
-//        $this->assertArrayHasKey('createData', $body);
-//        $this->assertArrayHasKey('createData', $body);
-//    }
-//
-//    public function testHasNotMandatoryFields()
-//    {
-//        $request = $this->buildRequest();
-//
-//        $request->setDepartureDepot('');
-//
-//        $this->setExpectedException('Andyts93\BrtApiWrapper\Exception\RequestException');
-//        $request->call();
-//    }
+    public function testHasNotMandatoryFields()
+    {
+        $request = $this->buildRequest();
+
+        $request->setDepartureDepot('');
+
+        $this->setExpectedException('Andyts93\BrtApiWrapper\Exception\RequestException');
+        $request->call();
+    }
 
     public function testCreateResponseSuccessful()
     {
         $request = $this->buildRequest();
 
-         $response = $request->call();
+        $response = $request->call();
 
-        print_r($request->createRequestBody());
-         print_r($response);
+        $this->assertInstanceOf('Andyts93\BrtApiWrapper\Response\CreateResponse', $response);
+        $this->assertFalse($response->hasError());
+    }
 
-//        $this->assertInstanceOf('Andyts93\BrtApiWrapper\Response\CreateResponse', $response);
-//         $this->assertFalse($response->hasError());
+    public function testCreateResponseSuccessfulWithWarning()
+    {
+        $request = $this->buildRequest();
+        $request->getConsignee()->setProvince(null);
+
+        $response = $request->call();
+
+        $this->assertInstanceOf('Andyts93\BrtApiWrapper\Response\CreateResponse', $response);
+        $this->assertTrue($response->hasWarning());
     }
 }
