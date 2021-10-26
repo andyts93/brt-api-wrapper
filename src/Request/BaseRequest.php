@@ -18,6 +18,16 @@ class BaseRequest
     protected $dataWrapper = 'data';
     protected $mandatoryFields = [];
     protected $isLabelRequired;
+    protected $senderCustomerCode;
+    /**
+     * @var int
+     */
+    protected $numericSenderReference;
+
+    /**
+     * @var string
+     */
+    protected $alphanumericSenderReference;
 
     /**
      * @var LabelParameter
@@ -111,6 +121,36 @@ class BaseRequest
     public function setLabelParameters($labelParameters)
     {
         $this->labelParameters = $labelParameters;
+        return $this;
+    }
+
+    /**
+     * @param mixed $senderCustomerCode
+     * @return BaseRequest
+     */
+    public function setSenderCustomerCode($senderCustomerCode)
+    {
+        $this->senderCustomerCode = $senderCustomerCode;
+        return $this;
+    }
+
+    /**
+     * @param int $numericSenderReference
+     * @return BaseRequest
+     */
+    public function setNumericSenderReference($numericSenderReference)
+    {
+        $this->numericSenderReference = $numericSenderReference;
+        return $this;
+    }
+
+    /**
+     * @param string $alphanumericSenderReference
+     * @return BaseRequest
+     */
+    public function setAlphanumericSenderReference($alphanumericSenderReference)
+    {
+        $this->alphanumericSenderReference = $alphanumericSenderReference;
         return $this;
     }
 }

@@ -36,11 +36,6 @@ class CreateRequest extends BaseRequest
     private $departureDepot;
 
     /**
-     * @var int
-     */
-    private $senderCustomerCode;
-
-    /**
      * @var string
      */
     private $deliveryFreightTypeCode;
@@ -117,16 +112,6 @@ class CreateRequest extends BaseRequest
      * @var string
      */
     private $codCurrency;
-
-    /**
-     * @var int
-     */
-    private $numericSenderReference;
-
-    /**
-     * @var string
-     */
-    private $alphanumericSenderReference;
 
     /**
      * @var string
@@ -279,16 +264,6 @@ class CreateRequest extends BaseRequest
     }
 
     /**
-     * @param int $senderCustomerCode
-     * @return CreateRequest
-     */
-    public function setSenderCustomerCode($senderCustomerCode)
-    {
-        $this->senderCustomerCode = $senderCustomerCode;
-        return $this;
-    }
-
-    /**
      * @param string $deliveryFreightTypeCode
      * @return CreateRequest
      */
@@ -435,26 +410,6 @@ class CreateRequest extends BaseRequest
     public function setCodCurrency($codCurrency)
     {
         $this->codCurrency = $codCurrency;
-        return $this;
-    }
-
-    /**
-     * @param int $numericSenderReference
-     * @return CreateRequest
-     */
-    public function setNumericSenderReference($numericSenderReference)
-    {
-        $this->numericSenderReference = $numericSenderReference;
-        return $this;
-    }
-
-    /**
-     * @param string $alphanumericSenderReference
-     * @return CreateRequest
-     */
-    public function setAlphanumericSenderReference($alphanumericSenderReference)
-    {
-        $this->alphanumericSenderReference = $alphanumericSenderReference;
         return $this;
     }
 
