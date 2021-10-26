@@ -2,12 +2,12 @@
 
 namespace Andyts93\BrtApiWrapper\Request;
 
+use Andyts93\BrtApiWrapper\Api\LabelParameter;
 use Andyts93\BrtApiWrapper\Exception\InvalidJsonException;
 use Andyts93\BrtApiWrapper\Exception\RequestException;
-use Andyts93\BrtApiWrapper\Response\CreateResponse;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
+use ReflectionObject;
 
 class BaseRequest
 {
@@ -60,20 +60,6 @@ class BaseRequest
         return $response;
     }
 
-    public function toArray()
-    {
-        $reflection = new \ReflectionObject($this);
-        $properties = [];
-        foreach ($reflection->getProperties() as $property) {
-//            if (in_array($property->getName(), $this->apiProperties)) {
-            if ($property->isPrivate()) {
-                $property->setAccessible(true);
-                $properties[$property->getName()] = $property->getValue($this);
-            }
-        }
-        return $properties;
-    }
-
     public function createRequestBody()
     {
 //        PHP 5.6+ only
@@ -90,6 +76,22 @@ class BaseRequest
             throw new RequestException(sprintf('Fields %s are mandatory', implode(', ', array_keys($emptyMandatory))));
         }
         return array_merge(['account' => $this->account], [$this->dataWrapper => $this->toArray()]);
+    }
+
+    public function toArray()
+    {
+        $reflection = new ReflectionObject($this);
+        $properties = [];
+        foreach ($reflection->getProperties() as $property) {
+//            if (in_array($property->getName(), $this->apiProperties)) {
+            if ($property->isPrivate()) {
+                $property->setAccessible(true);
+                if (!is_null($property->getValue($this))) {
+                    $properties[$property->getName()] = $property->getValue($this);
+                }
+            }
+        }
+        return $properties;
     }
 
     /**

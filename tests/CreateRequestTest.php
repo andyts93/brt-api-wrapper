@@ -2,8 +2,9 @@
 
 namespace Tests;
 
+use Andyts93\BrtApiWrapper\Api\Consignee;
 use Andyts93\BrtApiWrapper\Request\CreateRequest;
-use Andyts93\BrtApiWrapper\Request\LabelParameter;
+use Andyts93\BrtApiWrapper\Api\LabelParameter;
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
 
@@ -16,13 +17,17 @@ class CreateRequestTest extends TestCase
         $request = new CreateRequest('1020109', 'brt8045st');
 
         $request->setDepartureDepot(277)
-            ->setSenderCustomerCode(1)
+            ->setSenderCustomerCode(1020109)
             ->setDeliveryFreightTypeCode('DAP')
-            ->setConsigneeCompanyName($faker->company)
-            ->setConsigneeAddress(substr($faker->streetAddress, 0, 35))
-            ->setConsigneeZIPCode($faker->postcode)
-            ->setConsigneeCity($faker->city)
-            ->setConsigneeCountryAbbreviationISOAlpha2($faker->countryCode)
+            ->setConsignee(
+                (new Consignee())
+                ->setCity('Castiglione delle Stiviere')
+                ->setAddress('Via Donatori di Sangue 11')
+                ->setCompanyName($faker->company)
+                ->setCountry('IT')
+                ->setProvince('MN')
+                ->setZipCode('46043')
+            )
             ->setNumberOfParcels($faker->numberBetween(1, 5))
             ->setWeightKG($faker->randomFloat(1, 1, 100))
             ->setNumericSenderReference($faker->numberBetween(1, 10000))
@@ -46,7 +51,7 @@ class CreateRequestTest extends TestCase
     {
         $request = $this->buildRequest();
 
-        $request->setDepartureDepot(null);
+        $request->setDepartureDepot('');
 
         $this->setExpectedException('Andyts93\BrtApiWrapper\Exception\RequestException');
         $request->call();
@@ -57,6 +62,9 @@ class CreateRequestTest extends TestCase
         $request = $this->buildRequest();
 
         $response = $request->call();
+
+        print_r($request->createRequestBody());
+        print_r($response);
 
         $this->assertInstanceOf('Andyts93\BrtApiWrapper\Response\CreateResponse', $response);
         // $this->assertFalse($response->hasError());

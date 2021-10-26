@@ -34,7 +34,7 @@ class ConfirmRequestTest extends TestCase
     {
         $request = $this->buildRequest();
 
-        $request->setSenderCustomerCode(null);
+        $request->setSenderCustomerCode('');
 
         $this->setExpectedException('Andyts93\BrtApiWrapper\Exception\RequestException');
         $request->call();

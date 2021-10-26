@@ -2,6 +2,7 @@
 
 namespace Andyts93\BrtApiWrapper\Request;
 
+use Andyts93\BrtApiWrapper\Api\Consignee;
 use Andyts93\BrtApiWrapper\Response\CreateResponse;
 
 class CreateRequest extends BaseRequest
@@ -25,8 +26,6 @@ class CreateRequest extends BaseRequest
     ];
 
     /**
-     * I valori possibili vengono comunicati da BRT. Se indicata stringa vuota viene utilizzato il network standard BRT.
-     * In caso che il cliente possa scegliere più network, in ogni singola richiesta può essere indicato un solo valore.
      * @var string
      */
     private $network;
@@ -46,95 +45,13 @@ class CreateRequest extends BaseRequest
      */
     private $deliveryFreightTypeCode;
 
-    /**
-     * @var string
-     */
-    private $consigneeCompanyName;
-
-    /**
-     * @var string
-     */
-    private $consigneeAddress;
-
-    /**
-     * @var string
-     */
-    private $consigneeZIPCode;
-
-    /**
-     * @var string
-     */
-    private $consigneeCity;
-
-    /**
-     * @var string
-     */
-    private $consigneeProvinceAbbreviation;
-
-    /**
-     * @var string
-     */
-    private $consigneeCountryAbbreviationISOAlpha2;
-
-    /**
-     * @var string
-     */
-    private $consigneeClosingShift1_DayOfTheWeek;
-
-    /**
-     * @var string
-     */
-    private $consigneeClosingShift1_PeriodOfTheDay;
-
-    /**
-     * @var string
-     */
-    private $consigneeClosingShift2_DayOfTheWeek;
-
-    /**
-     * @var string
-     */
-    private $consigneeClosingShift2_PeriodOfTheDay;
-
-    /**
-     * @var string
-     */
-    private $consigneeContactName;
-
-    /**
-     * @var string
-     */
-    private $consigneeTelephone;
-
-    /**
-     * @var string
-     */
-    private $consigneeEMail;
-
-    /**
-     * @var string
-     */
-    private $consigneeMobilePhoneNumber;
+    /** @var Consignee */
+    private $consignee;
 
     /**
      * @var string
      */
     private $isAlertRequired;
-
-    /**
-     * @var string
-     */
-    private $consigneeVATNumber;
-
-    /**
-     * @var string
-     */
-    private $consigneeVATNumberCountryISOAlpha2;
-
-    /**
-     * @var string
-     */
-    private $consigneeItalianFiscalCode;
 
     /**
      * @var string
@@ -382,182 +299,12 @@ class CreateRequest extends BaseRequest
     }
 
     /**
-     * @param string $consigneeCompanyName
-     * @return CreateRequest
-     */
-    public function setConsigneeCompanyName($consigneeCompanyName)
-    {
-        $this->consigneeCompanyName = $consigneeCompanyName;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeAddress
-     * @return CreateRequest
-     */
-    public function setConsigneeAddress($consigneeAddress)
-    {
-        $this->consigneeAddress = $consigneeAddress;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeZIPCode
-     * @return CreateRequest
-     */
-    public function setConsigneeZIPCode($consigneeZIPCode)
-    {
-        $this->consigneeZIPCode = $consigneeZIPCode;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeCity
-     * @return CreateRequest
-     */
-    public function setConsigneeCity($consigneeCity)
-    {
-        $this->consigneeCity = $consigneeCity;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeProvinceAbbreviation
-     * @return CreateRequest
-     */
-    public function setConsigneeProvinceAbbreviation($consigneeProvinceAbbreviation)
-    {
-        $this->consigneeProvinceAbbreviation = $consigneeProvinceAbbreviation;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeCountryAbbreviationISOAlpha2
-     * @return CreateRequest
-     */
-    public function setConsigneeCountryAbbreviationISOAlpha2($consigneeCountryAbbreviationISOAlpha2)
-    {
-        $this->consigneeCountryAbbreviationISOAlpha2 = $consigneeCountryAbbreviationISOAlpha2;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeClosingShift1_DayOfTheWeek
-     * @return CreateRequest
-     */
-    public function setConsigneeClosingShift1DayOfTheWeek($consigneeClosingShift1_DayOfTheWeek)
-    {
-        $this->consigneeClosingShift1_DayOfTheWeek = $consigneeClosingShift1_DayOfTheWeek;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeClosingShift1_PeriodOfTheDay
-     * @return CreateRequest
-     */
-    public function setConsigneeClosingShift1PeriodOfTheDay($consigneeClosingShift1_PeriodOfTheDay)
-    {
-        $this->consigneeClosingShift1_PeriodOfTheDay = $consigneeClosingShift1_PeriodOfTheDay;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeClosingShift2_DayOfTheWeek
-     * @return CreateRequest
-     */
-    public function setConsigneeClosingShift2DayOfTheWeek($consigneeClosingShift2_DayOfTheWeek)
-    {
-        $this->consigneeClosingShift2_DayOfTheWeek = $consigneeClosingShift2_DayOfTheWeek;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeClosingShift2_PeriodOfTheDay
-     * @return CreateRequest
-     */
-    public function setConsigneeClosingShift2PeriodOfTheDay($consigneeClosingShift2_PeriodOfTheDay)
-    {
-        $this->consigneeClosingShift2_PeriodOfTheDay = $consigneeClosingShift2_PeriodOfTheDay;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeContactName
-     * @return CreateRequest
-     */
-    public function setConsigneeContactName($consigneeContactName)
-    {
-        $this->consigneeContactName = $consigneeContactName;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeTelephone
-     * @return CreateRequest
-     */
-    public function setConsigneeTelephone($consigneeTelephone)
-    {
-        $this->consigneeTelephone = $consigneeTelephone;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeEMail
-     * @return CreateRequest
-     */
-    public function setConsigneeEMail($consigneeEMail)
-    {
-        $this->consigneeEMail = $consigneeEMail;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeMobilePhoneNumber
-     * @return CreateRequest
-     */
-    public function setConsigneeMobilePhoneNumber($consigneeMobilePhoneNumber)
-    {
-        $this->consigneeMobilePhoneNumber = $consigneeMobilePhoneNumber;
-        return $this;
-    }
-
-    /**
      * @param string $isAlertRequired
      * @return CreateRequest
      */
     public function setIsAlertRequired($isAlertRequired)
     {
         $this->isAlertRequired = $isAlertRequired;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeVATNumber
-     * @return CreateRequest
-     */
-    public function setConsigneeVATNumber($consigneeVATNumber)
-    {
-        $this->consigneeVATNumber = $consigneeVATNumber;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeVATNumberCountryISOAlpha2
-     * @return CreateRequest
-     */
-    public function setConsigneeVATNumberCountryISOAlpha2($consigneeVATNumberCountryISOAlpha2)
-    {
-        $this->consigneeVATNumberCountryISOAlpha2 = $consigneeVATNumberCountryISOAlpha2;
-        return $this;
-    }
-
-    /**
-     * @param string $consigneeItalianFiscalCode
-     * @return CreateRequest
-     */
-    public function setConsigneeItalianFiscalCode($consigneeItalianFiscalCode)
-    {
-        $this->consigneeItalianFiscalCode = $consigneeItalianFiscalCode;
         return $this;
     }
 
@@ -958,6 +705,15 @@ class CreateRequest extends BaseRequest
     public function setPudoId($pudoId)
     {
         $this->pudoId = $pudoId;
+        return $this;
+    }
+
+    /**
+     * @param Consignee $consignee
+     */
+    public function setConsignee($consignee)
+    {
+        $this->consignee = $consignee;
         return $this;
     }
 }

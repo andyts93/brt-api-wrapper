@@ -1,6 +1,6 @@
 <?php
 
-namespace Andyts93\BrtApiWrapper\Request;
+namespace Andyts93\BrtApiWrapper\Api;
 
 class LabelParameter
 {
