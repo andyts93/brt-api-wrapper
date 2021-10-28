@@ -2,6 +2,8 @@
 
 namespace Andyts93\BrtApiWrapper\Response;
 
+use Andyts93\BrtApiWrapper\Api\Label;
+
 class CreateResponse extends BaseResponse
 {
     protected $rootElement = 'createResponse';

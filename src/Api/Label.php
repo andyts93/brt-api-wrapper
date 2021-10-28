@@ -7,17 +7,17 @@ class Label
     /**
      * @var int
      */
-    private $dataLength;
+    public $dataLength;
 
     /**
      * @var string
      */
-    private $parcelID;
+    public $parcelID;
 
     /**
      * @var string
      */
-    private $stream;
+    public $stream;
 
     public function __construct($dataLength, $parcelID, $stream)
     {
@@ -25,29 +25,5 @@ class Label
         $this->dataLength = $dataLength;
         $this->parcelID = $parcelID;
         $this->stream = base64_decode($stream);
-    }
-
-    /**
-     * @return int
-     */
-    public function getDataLength()
-    {
-        return $this->dataLength;
-    }
-
-    /**
-     * @return string
-     */
-    public function getParcelID()
-    {
-        return $this->parcelID;
-    }
-
-    /**
-     * @return string
-     */
-    public function getStream()
-    {
-        return $this->stream;
     }
 }
