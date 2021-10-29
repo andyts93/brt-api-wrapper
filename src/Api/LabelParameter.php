@@ -117,9 +117,9 @@ class LabelParameter
             'outputType' => $this->outputType,
             'offsetX' => $this->offsetX,
             'offsetY' => $this->offsetY,
-            'isBorderRequired' => $this->isBorderRequired ? "S" : "N",
-            'isLogoRequired' => $this->isLogoRequired ? "S" : "N",
-            'isBarcodeControlRowRequired' => $this->isBarcodeControlRowRequired ? "S" : "N"
+            'isBorderRequired' => $this->isBorderRequired ? 1 : 0,
+            'isLogoRequired' => $this->isLogoRequired ? 1 : 0,
+            'isBarcodeControlRowRequired' => $this->isBarcodeControlRowRequired ? 1 : 0
         ];
     }
 }
