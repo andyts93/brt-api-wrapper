@@ -265,7 +265,7 @@ class CreateRequest extends BaseRequest
                 'consigneeClosingShift2_PeriodOfTheDay' => $this->consignee->getClosingShift2PeriodOfTheDay(),
                 'consigneeContactName' => $this->consignee->getContactName(),
                 'consigneeTelephone' => $this->consignee->getTelephone(),
-                'consigneeEmail' => $this->consignee->getEmail(),
+                'consigneeEMail' => $this->consignee->getEmail(),
                 'consigneeMobilePhoneNumber' => $this->consignee->getMobilePhone(),
                 'isAlertRequired' => $this->isAlertRequired,
                 'consigneeVATNumber' => $this->consignee->getVatNumber(),
