@@ -56,7 +56,8 @@ class RequestsTest extends TestCase
 
         $request->setDepartureDepot('');
 
-        $this->setExpectedException('Andyts93\BrtApiWrapper\Exception\RequestException');
+        $this->expectException('Andyts93\BrtApiWrapper\Exception\RequestException');
+
         $request->call();
     }
 

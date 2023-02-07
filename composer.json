@@ -23,17 +23,17 @@
     },
     "config": {
         "platform": {
-            "php": "5.4.45"
+            "php": "8.2.1"
         }
     },
     "require": {
-        "php": ">=5.4 <8",
+        "php": ">=5.4",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^5.3"
+        "guzzlehttp/guzzle": "^7.5"
     },
     "require-dev": {
-        "fzaninotto/faker": "^1.9",
-        "phpunit/phpunit": "^4.8",
-        "squizlabs/php_codesniffer": "^3.6"
+        "fzaninotto/faker": "^1.5",
+        "phpunit/phpunit": "^10.0",
+        "squizlabs/php_codesniffer": "^3.7"
     }
 }

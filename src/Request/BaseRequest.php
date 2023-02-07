@@ -52,15 +52,13 @@ abstract class BaseRequest implements RequestInterface
     public function call()
     {
         $client = new Client([
-            'base_url' => 'https://api.brt.it/rest/v1/',
+            'base_uri' => 'https://api.brt.it/rest/v1/',
             'timeout' => 2.0
         ]);
 
-        $request = $client->createRequest($this->method, $this->endpoint, [
+        $response = $client->request($this->method, $this->endpoint, [
             'json' => $this->createRequestBody()
         ]);
-
-        $response = $client->send($request);
 
         $response = json_decode($response->getBody());
 
