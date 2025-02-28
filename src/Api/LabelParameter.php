@@ -34,13 +34,19 @@ class LabelParameter
      */
     private $isBarcodeControlRowRequired;
 
+    /**
+     * @var string
+     */
+    private $labelFormat;
+
     public function __construct(
         $outputType = 'ZPL',
         $offsetX = 0,
         $offsetY = 0,
         $isBorderRequired = 0,
         $isLogoRequired = 0,
-        $isBarcodeControlRowRequired = 0
+        $isBarcodeControlRowRequired = 0,
+        $labelFormat = ''
     ) {
 
         $this->outputType = $outputType;
@@ -49,6 +55,7 @@ class LabelParameter
         $this->isBorderRequired = $isBorderRequired;
         $this->isLogoRequired = $isLogoRequired;
         $this->isBarcodeControlRowRequired = $isBarcodeControlRowRequired;
+        $this->labelFormat = $labelFormat;
     }
 
     /**
@@ -111,6 +118,16 @@ class LabelParameter
         return $this;
     }
 
+    /**
+     * @param string $labelFormat
+     * @return LabelParameter
+     */
+    public function setLabelFormat($labelFormat)
+    {
+        $this->labelFormat = $labelFormat;
+        return $this;
+    }
+
     public function toArray()
     {
         return [
@@ -119,7 +136,8 @@ class LabelParameter
             'offsetY' => $this->offsetY,
             'isBorderRequired' => $this->isBorderRequired ? 1 : 0,
             'isLogoRequired' => $this->isLogoRequired ? 1 : 0,
-            'isBarcodeControlRowRequired' => $this->isBarcodeControlRowRequired ? 1 : 0
+            'isBarcodeControlRowRequired' => $this->isBarcodeControlRowRequired ? 1 : 0,
+            'labelFormat' => $this->labelFormat
         ];
     }
 }
